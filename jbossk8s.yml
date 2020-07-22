@@ -1,42 +1,12 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: devops-deployment
-spec:
-  selector:
-    matchLabels:
-      app: devops-project
-  replicas: 2
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-
-  template:
-    metadata:
-      labels:
-        app: devops-project
-    spec:
-      containers:
-      - name: devops-project
-        image: pankajarora34/simple-devops-image
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
----
-##creating a Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: devops-service
-  labels:
-    app: devops-project
+  name: ts-service
 spec:
+  type: NodePort
   selector:
-    app: devops-project
-  type: LoadBalancer
+    app: ts
   ports:
-    - port: 8080      ##Application Port Level
-      targetPort: 8080     ## At my cluster Level
-      nodePort: 31200      ## At Port number pod level
+  - protocol: TCP
+    port: 8080
+    nodePort: 8080
