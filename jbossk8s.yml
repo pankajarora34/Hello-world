@@ -39,4 +39,4 @@ spec:
   ports:
     - port: 8080      ##Application Port Level
       targetPort: 8080     ## At my cluster Level
-	  nodePort: 31200      ## At Port number pod level
+      nodePort: 31200      ## At Port number pod level
