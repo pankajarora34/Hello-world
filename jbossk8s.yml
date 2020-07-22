@@ -34,7 +34,7 @@ metadata:
     app: devops-project
 spec:
   selector:
-    app: devops-project     -->> check this line
+    app: devops-project
   type: LoadBalancer
   ports:
     - port: 8080      ##Application Port Level
