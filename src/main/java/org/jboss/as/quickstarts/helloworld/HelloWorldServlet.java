@@ -56,8 +56,8 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println(PAGE_HEADER);
         writer.println("<h1>" + helloService.createHelloMessage("To All How are you") + "</h1>");
-        writer.println("<h1> Thanks For Attending the Session on Devops Session</h1>");
-        writer.println("<h1> Thanks For Attending the Session on CI/CD Session</h1>");
+        writer.println("<h1> Thanks For Attending the Session</h1>");
+        writer.println("<h1> Thanks For Attending the Session</h1>");
         writer.println(PAGE_FOOTER);
         writer.close();
     }
